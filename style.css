@@ -21,7 +21,7 @@ main { width: min(960px, 100%); margin: 0 auto; padding: 20px 32px 58px; }
 .header { width: 100%; background: linear-gradient(110deg, #080c38, #101b42); color: var(--text); border-bottom: 1px solid #263963; }
 .header-content { display: flex; justify-content: space-between; align-items: center; gap: 24px; width: 100%; padding: 24px 32px; }
 h1 { margin: 8px 0 0; font: 700 clamp(30px, 4vw, 38px)/1.2 "Prompt", sans-serif; letter-spacing: -1.3px; }
-h1 span { color: #a2dae0; }
+h1 span { color: var(--red); }
 .title p { margin: 3px 0 0; color: #a2b7d3; font-size: 14px; font-weight: 400; }
 .connect { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
 #connectionStatus { flex: 0 0 11px; width: 11px; height: 11px; margin: 0; overflow: hidden; border-radius: 50%; background: var(--red); font-size: 0; line-height: 0; box-shadow: 0 0 9px #ff426633; }
