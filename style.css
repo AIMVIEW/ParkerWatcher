@@ -17,11 +17,12 @@ body {
   color: var(--text);
   font: 14px/1.7 "Prompt", Tahoma, sans-serif;
 }
-main { width: min(960px, 100%); margin: 0 auto; padding: 42px 32px 58px; }
-.header { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding-bottom: 27px; border-bottom: 1px solid var(--line); }
+main { width: min(960px, 100%); margin: 0 auto; padding: 20px 32px 58px; }
+.header { width: 100%; background: var(--text); color: var(--background); color-scheme: light; border-bottom: 1px solid #d8e0eb; }
+.header-content { display: flex; justify-content: space-between; align-items: center; gap: 24px; width: min(960px, 100%); margin: 0 auto; padding: 24px 32px; }
 h1 { margin: 8px 0 0; font: 700 clamp(30px, 4vw, 38px)/1.2 "Prompt", sans-serif; letter-spacing: -1.3px; }
 h1 span { color: var(--blue); }
-.title p { margin: 3px 0 0; color: var(--muted); font-size: 14px; font-weight: 400; }
+.title p { margin: 3px 0 0; color: #536176; font-size: 14px; font-weight: 400; }
 .connect { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
 #connectionStatus { flex: 0 0 11px; width: 11px; height: 11px; margin: 0; overflow: hidden; border-radius: 50%; background: var(--red); font-size: 0; line-height: 0; box-shadow: 0 0 9px #ff426633; }
 #connectionStatus.connected { background: var(--green); box-shadow: 0 0 9px #10ce9a33; }
@@ -59,11 +60,11 @@ h1 span { color: var(--blue); }
 .road-text { position: absolute; left: 50%; transform: translateX(-50%); padding: 0 18px; background: #182233; white-space: nowrap; color: #aab7ca; font-size: 12px; font-weight: 400; }
 .lot.stale .slots { opacity: .55; }
 @media (max-width: 600px) {
-  main { padding: 27px 18px 36px; }
-  .header { align-items: flex-start; gap: 12px; padding-bottom: 22px; }
+  main { padding: 5px 18px 36px; }
+  .header-content { align-items: center; flex-wrap: wrap; gap: 16px 12px; padding: 20px 18px; }
   h1 { font-size: clamp(23px, 7vw, 29px); }
   .title p { font-size: 12px; }
-  .connect { gap: 8px; padding-top: 9px; }
+  .connect { gap: 8px; margin-left: auto; }
   .connect button { min-width: 104px; padding: 9px 12px; font-size: 11px; }
   .availability { margin: 22px 0; }
   .availability-number strong { font-size: 66px; }
