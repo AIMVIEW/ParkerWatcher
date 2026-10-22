@@ -1,0 +1,9 @@
+{
+  "name": "parkerwatcher",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Buildless parking monitor with one-topic MQTT array snapshots",
+  "scripts": {
+    "test": "node --test tests/parking-array.test.cjs tests/dashboard.test.cjs"
+  }
+}

@@ -1,0 +1,8 @@
+Paho MQTT JavaScript client mqttws31.js
+Copied unchanged from the user's supplied web(1).zip, web/mqttws31.js.
+Original copyright and license header preserved inside the file.
+Copyright (c) 2013 IBM Corp.
+Available under Eclipse Public License v1.0 and Eclipse Distribution License v1.0.
+http://www.eclipse.org/legal/epl-v10.html
+http://www.eclipse.org/org/documents/edl-v10.php
+Project: https://eclipse.dev/paho/clients/js/
