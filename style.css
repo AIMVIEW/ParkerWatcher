@@ -34,12 +34,12 @@ h1 span { color: var(--blue); }
 .availability-label i { width: 6px; height: 6px; border-radius: 50%; background: var(--green); box-shadow: 0 0 9px #10ce9a55; }
 .availability-number { display: flex; align-items: baseline; gap: 10px; margin: 0; }
 .availability-number strong { color: var(--green); font: 700 76px/1.15 "Prompt", sans-serif; letter-spacing: -4px; }
-.availability-number > span { color: #e0e7f1; font-size: 15px; }
+.availability-total { color: #e0e7f1; font-size: 64px; font-weight: 600; line-height: 1.15; letter-spacing: -2px; }
+.availability-unit { font-size: 16px; font-weight: 400; letter-spacing: 0; }
 #dataStatus { min-height: 17px; margin: 4px 0 0; color: #aab7ca; font-size: 13px; font-weight: 400; }
 .lot { overflow: hidden; padding: 0 24px; border: 1px solid #253148; border-radius: 15px; background: linear-gradient(135deg, #1b2639, #172031); box-shadow: 0 18px 45px #070d1926; }
 .lot-heading { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 20px 0 17px; border-bottom: 1px solid var(--line); color: #e5ebf4; font-size: 12px; }
 .lot-heading > span:first-child::before { content: "▣"; margin-right: 8px; color: #5791ff; }
-.lot-heading span:last-child { color: #8292aa; font: 9px "Prompt", sans-serif; letter-spacing: 2px; }
 .map-scroll { overflow-x: auto; padding-top: 25px; scrollbar-color: #3c5273 #172031; }
 .map-content { width: max-content; min-width: 100%; }
 .slots { display: flex; gap: 20px; width: 100%; padding: 0 2px; }
@@ -70,6 +70,8 @@ h1 span { color: var(--blue); }
   .connect button { min-width: 104px; padding: 9px 12px; font-size: 11px; }
   .availability { margin: 22px 0; }
   .availability-number strong { font-size: 66px; }
+  .availability-total { font-size: 56px; }
+  .availability-unit { font-size: 14px; }
   .lot { padding: 0 17px; }
   .lot-heading { padding: 17px 0; font-size: 11px; }
   .map-scroll { padding-top: 21px; }
