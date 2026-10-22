@@ -18,19 +18,19 @@ body {
   font: 14px/1.7 "Prompt", Tahoma, sans-serif;
 }
 main { width: min(960px, 100%); margin: 0 auto; padding: 20px 32px 58px; }
-.header { width: 100%; background: var(--text); color: var(--background); color-scheme: light; border-bottom: 1px solid #d8e0eb; }
+.header { width: 100%; background: linear-gradient(110deg, #080c38, #101b42); color: var(--text); border-bottom: 1px solid #263963; }
 .header-content { display: flex; justify-content: space-between; align-items: center; gap: 24px; width: 100%; padding: 24px 32px; }
 h1 { margin: 8px 0 0; font: 700 clamp(30px, 4vw, 38px)/1.2 "Prompt", sans-serif; letter-spacing: -1.3px; }
-h1 span { color: var(--blue); }
-.title p { margin: 3px 0 0; color: #536176; font-size: 14px; font-weight: 400; }
+h1 span { color: #a2dae0; }
+.title p { margin: 3px 0 0; color: #a2b7d3; font-size: 14px; font-weight: 400; }
 .connect { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
 #connectionStatus { flex: 0 0 11px; width: 11px; height: 11px; margin: 0; overflow: hidden; border-radius: 50%; background: var(--red); font-size: 0; line-height: 0; box-shadow: 0 0 9px #ff426633; }
 #connectionStatus.connected { background: var(--green); box-shadow: 0 0 9px #10ce9a33; }
-.connect button { min-width: 122px; padding: 10px 17px; border: 1px solid #14785f; border-radius: 7px; background: #0d2b2a; color: #64e7c2; cursor: pointer; font: 600 12px/1.5 "Prompt", sans-serif; letter-spacing: .7px; }
-.connect button:hover { background: #124039; border-color: var(--green); }
+.connect button { min-width: 122px; padding: 10px 17px; border: 1px solid #365985; border-radius: 7px; background: #152b51; color: #c8edf0; cursor: pointer; font: 600 12px/1.5 "Prompt", sans-serif; letter-spacing: .7px; }
+.connect button:hover { background: #0e49b5; border-color: #a2dae0; }
 .connect button:focus-visible, .map-scroll:focus-visible { outline: 2px solid #73ebc9; outline-offset: 4px; }
-.connect button.active { background: #0d2427; }
-.availability { display: flex; flex-direction: column; align-items: center; text-align: center; margin: 26px 0 28px; padding: 17px 20px 19px; border: 1px solid #1f2b40; border-radius: 13px; background: linear-gradient(120deg, #101a2c, #111a2a); }
+.connect button.active { background: #102547; }
+.availability { display: flex; flex-direction: column; align-items: center; text-align: center; margin: 34px 0 54px; padding: 17px 20px 19px; }
 .availability-label { display: flex; align-items: center; gap: 7px; color: #63dfbb; font-size: 12px; }
 .availability-label i { width: 6px; height: 6px; border-radius: 50%; background: var(--green); box-shadow: 0 0 9px #10ce9a55; }
 .availability-number { display: flex; align-items: baseline; gap: 12px; margin: 0; }
@@ -38,24 +38,23 @@ h1 span { color: var(--blue); }
 .availability-total { color: #e0e7f1; font-size: 64px; font-weight: 600; line-height: 1.15; letter-spacing: 0; font-variant-numeric: tabular-nums; }
 .availability-unit { font-size: 16px; font-weight: 400; letter-spacing: 0; }
 #dataStatus { min-height: 17px; margin: 4px 0 0; color: #aab7ca; font-size: 13px; font-weight: 400; }
-.lot { overflow: hidden; padding: 0 24px; border: 1px solid #253148; border-radius: 15px; background: var(--surface); }
+.lot { overflow: hidden; }
 .map-scroll { overflow-x: auto; padding-top: 25px; scrollbar-color: #3c5273 #172031; }
 .map-content { width: max-content; min-width: 100%; }
-.slots { display: flex; width: 100%; border: 1px solid #56647b; }
-.slot { --accent: #9ba8bb; display: flex; flex: 1 0 120px; flex-direction: column; align-items: center; justify-content: center; min-width: 120px; min-height: 172px; padding: 22px 12px; color: var(--text); }
-.slot + .slot { border-left: 1px solid #56647b; }
+.slots { display: flex; gap: 16px; width: 100%; }
+.slot { --accent: #9ba8bb; display: grid; grid-template-columns: max-content max-content; grid-template-rows: 1fr auto; align-items: center; justify-content: center; column-gap: 8px; row-gap: 22px; flex: 1 0 120px; min-width: 120px; min-height: 160px; padding: 26px 16px; border: 1px solid #253148; border-radius: 12px; background: #151f30; color: var(--text); }
 .slot.empty { --accent: var(--green); }
 .slot.occupied { --accent: var(--red); }
-.slot-id { color: #d4ddeb; font: 600 14px "Prompt", sans-serif; letter-spacing: 1px; }
-.slot-visual { display: flex; justify-content: center; align-items: center; height: 49px; }
-.status-dot { width: 13px; height: 13px; border-radius: 50%; background: var(--accent); }
-.slot-state { color: var(--text); font-size: 19px; font-weight: 600; }
+.slot-id { grid-column: 1 / -1; text-align: center; color: var(--text); font: 600 30px "Prompt", sans-serif; letter-spacing: 0; }
+.slot-visual { display: flex; justify-content: center; align-items: center; height: auto; }
+.status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+.slot-state { color: var(--text); font-size: 12px; font-weight: 400; }
 .slot.empty .slot-state { color: var(--green); }
 .slot.occupied .slot-state { color: var(--red); }
 .slot.unknown .slot-state { color: #aab7ca; }
 .road { position: relative; display: flex; align-items: center; gap: 20px; height: 87px; padding: 0 4px; }
 .road-line { flex: 1; height: 1px; background: #42506a; }
-.road-text { position: absolute; left: 50%; transform: translateX(-50%); padding: 0 18px; background: #182233; white-space: nowrap; color: #53e6c0; font-size: 12px; font-weight: 400; }
+.road-text { position: absolute; left: 50%; transform: translateX(-50%); padding: 0 18px; background: var(--background); white-space: nowrap; color: #53e6c0; font-size: 12px; font-weight: 400; }
 .lot.stale .slots { opacity: .55; }
 @media (max-width: 600px) {
   main { padding: 5px 18px 36px; }
@@ -64,14 +63,13 @@ h1 span { color: var(--blue); }
   .title p { font-size: 12px; }
   .connect { gap: 8px; margin-left: auto; }
   .connect button { min-width: 104px; padding: 9px 12px; font-size: 11px; }
-  .availability { margin: 22px 0; }
+  .availability { margin: 22px 0 36px; }
   .availability-number strong { font-size: 66px; }
   .availability-total { font-size: 56px; }
   .availability-unit { font-size: 14px; }
-  .lot { padding: 0 17px; }
   .map-scroll { padding-top: 21px; }
-  .slot { flex-basis: 120px; min-height: 155px; padding: 18px 10px; }
-  .slot-state { font-size: 17px; }
+  .slot { flex-basis: 120px; min-height: 145px; padding: 22px 12px; }
+  .slot-state { font-size: 12px; }
   .road { height: 76px; }
   #dataStatus { font-size: 12px; }
 }
