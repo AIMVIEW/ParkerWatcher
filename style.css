@@ -42,13 +42,13 @@ h1 span { color: #a2dae0; }
 .map-scroll { overflow-x: auto; padding-top: 25px; scrollbar-color: #3c5273 #172031; }
 .map-content { width: max-content; min-width: 100%; }
 .slots { display: flex; gap: 16px; width: 100%; }
-.slot { --accent: #9ba8bb; display: grid; grid-template-columns: max-content max-content; grid-template-rows: 1fr auto; align-items: center; justify-content: center; column-gap: 8px; row-gap: 22px; flex: 1 0 120px; min-width: 120px; min-height: 160px; padding: 26px 16px; border: 1px solid #253148; border-radius: 12px; background: #151f30; color: var(--text); }
+.slot { --accent: #9ba8bb; display: grid; grid-template-columns: 1fr; grid-template-rows: auto auto auto; align-items: center; justify-content: center; row-gap: 17px; flex: 1 0 120px; min-width: 120px; min-height: 180px; padding: 24px 12px; text-align: center; border: 1px solid #253148; border-radius: 12px; background: #151f30; color: var(--text); }
 .slot.empty { --accent: var(--green); }
 .slot.occupied { --accent: var(--red); }
-.slot-id { grid-column: 1 / -1; text-align: center; color: var(--text); font: 600 30px "Prompt", sans-serif; letter-spacing: 0; }
+.slot-id { grid-column: 1 / -1; text-align: center; color: var(--text); font: 600 16px "Prompt", sans-serif; letter-spacing: 0; }
 .slot-visual { display: flex; justify-content: center; align-items: center; height: auto; }
-.status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
-.slot-state { color: var(--text); font-size: 12px; font-weight: 400; }
+.status-dot { width: 18px; height: 18px; border-radius: 50%; background: var(--accent); }
+.slot-state { color: var(--text); font-size: 20px; font-weight: 600; }
 .slot.empty .slot-state { color: var(--green); }
 .slot.occupied .slot-state { color: var(--red); }
 .slot.unknown .slot-state { color: #aab7ca; }
@@ -68,8 +68,8 @@ h1 span { color: #a2dae0; }
   .availability-total { font-size: 56px; }
   .availability-unit { font-size: 14px; }
   .map-scroll { padding-top: 21px; }
-  .slot { flex-basis: 120px; min-height: 145px; padding: 22px 12px; }
-  .slot-state { font-size: 12px; }
+  .slot { flex-basis: 120px; min-height: 170px; padding: 22px 12px; }
+  .slot-state { font-size: 19px; }
   .road { height: 76px; }
   #dataStatus { font-size: 12px; }
 }
