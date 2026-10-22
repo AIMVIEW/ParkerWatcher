@@ -51,6 +51,7 @@ h1 span { color: var(--blue); }
 .status-dot { width: 13px; height: 13px; border-radius: 50%; background: var(--accent); }
 .slot-state { color: var(--text); font-size: 19px; font-weight: 600; }
 .slot.empty .slot-state { color: var(--green); }
+.slot.occupied .slot-state { color: var(--red); }
 .slot.unknown .slot-state { color: #aab7ca; }
 .road { position: relative; display: flex; align-items: center; gap: 20px; height: 87px; padding: 0 4px; }
 .road-line { flex: 1; height: 1px; background: #42506a; }
