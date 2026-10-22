@@ -18,16 +18,15 @@
   <main>
     <section class="availability" aria-label="จำนวนช่องว่าง">
       <span class="availability-label"><i aria-hidden="true"></i> จำนวนที่ว่าง</span>
-      <p class="availability-number"><strong id="availableCount">—</strong><span class="availability-total">/ <span id="totalCount">4</span><span class="availability-unit"> ช่อง</span></span></p>
+      <p class="availability-number"><strong id="availableCount">—</strong><span class="availability-total" aria-hidden="true">/</span><span id="totalCount" class="availability-total">4</span><span class="availability-unit">ช่อง</span></p>
       <p id="dataStatus" role="status">รอผลตรวจจากรถสำรวจ</p>
     </section>
 
     <section class="lot" aria-label="ภาพจำลองลานจอดรถ">
-      <div class="lot-heading"><span>ภาพจำลองลานจอด</span></div>
       <div class="map-scroll" tabindex="0" role="region" aria-label="ผังจอดแถวเดียว เลื่อนแนวนอนเพื่อดูช่องเพิ่มเติม">
         <div class="map-content">
           <div id="parkingSlots" class="slots" aria-label="สถานะแต่ละช่องจอด"></div>
-          <div class="road" aria-label="เส้นทางรถสำรวจขนานกับช่องจอด"><span class="road-arrow" aria-hidden="true">→</span><span class="road-line" aria-hidden="true"></span><span class="road-text">เส้นทางรถสำรวจ</span><span class="road-arrow" aria-hidden="true">→</span></div>
+          <div class="road" aria-label="เส้นทางรถสำรวจขนานกับช่องจอด"><span class="road-line" aria-hidden="true"></span><span class="road-text">เส้นทางรถสำรวจ</span></div>
         </div>
       </div>
     </section>
