@@ -36,11 +36,13 @@
         ? 'รับข้อมูลล่าสุด ' + new Date(receivedAt).toLocaleTimeString('th-TH') + (values.includes(null) ? ' · บางช่องยังรอข้อมูล' : '')
         : 'ข้อมูลเก่า · รอผลตรวจรอบใหม่';
     } else $('dataStatus').textContent = dataNote;
+    $('connectionStatus').classList.toggle('connected', phase === 'connected');
     $('connectButton').classList.toggle('active', phase !== 'idle');
     $('connectButton').textContent = phase === 'idle' ? 'Connect ↗' : phase === 'connected' ? 'Disconnect' : 'Cancel';
   }
   function status(text, error) {
     $('connectionStatus').textContent = text;
+    $('connectionStatus').setAttribute('title', text);
     $('connectionStatus').classList.toggle('error', Boolean(error));
     render();
   }
