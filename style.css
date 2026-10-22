@@ -37,25 +37,22 @@ h1 span { color: var(--blue); }
 .availability-total { color: #e0e7f1; font-size: 64px; font-weight: 600; line-height: 1.15; letter-spacing: -2px; }
 .availability-unit { font-size: 16px; font-weight: 400; letter-spacing: 0; }
 #dataStatus { min-height: 17px; margin: 4px 0 0; color: #aab7ca; font-size: 13px; font-weight: 400; }
-.lot { overflow: hidden; padding: 0 24px; border: 1px solid #253148; border-radius: 15px; background: linear-gradient(135deg, #1b2639, #172031); box-shadow: 0 18px 45px #070d1926; }
+.lot { overflow: hidden; padding: 0 24px; border: 1px solid #253148; border-radius: 15px; background: var(--surface); }
 .lot-heading { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 20px 0 17px; border-bottom: 1px solid var(--line); color: #e5ebf4; font-size: 12px; }
 .lot-heading > span:first-child::before { content: "▣"; margin-right: 8px; color: #5791ff; }
 .map-scroll { overflow-x: auto; padding-top: 25px; scrollbar-color: #3c5273 #172031; }
 .map-content { width: max-content; min-width: 100%; }
-.slots { display: flex; gap: 20px; width: 100%; padding: 0 2px; }
-.slot { --accent: #738299; --tint: #73829908; display: flex; flex: 1 0 120px; flex-direction: column; align-items: center; min-width: 120px; min-height: 243px; padding: 22px 12px 17px; border: 1px dashed #536079; border-radius: 13px; background: var(--tint); color: var(--muted); }
-.slot.empty { --accent: var(--green); --tint: #10ce9a07; border: 1px solid #087e67; }
-.slot.occupied { --accent: var(--blue); --tint: #3679ff08; border: 1px solid #315dad; }
-.slot.occupied:first-child { --accent: var(--green); --tint: #10ce9a07; border-color: #087e67; }
-.slot.occupied:last-child { --accent: var(--red); --tint: #ff42660b; border-color: #b52f50; }
-.slot-id { color: #e7edf8; font: 600 12px "Prompt", sans-serif; letter-spacing: 1px; }
-.slot-visual { display: flex; justify-content: center; align-items: center; height: 151px; }
-.slot-state { color: var(--accent); font-size: 11px; }
-.placeholder { display: flex; justify-content: center; align-items: center; width: 48px; height: 48px; border-radius: 50%; background: #73829912; color: #8e9bb0; font: 25px "Prompt", sans-serif; }
-.slot.empty .placeholder { color: var(--green); background: #10ce9a18; }
-.car { position: relative; width: 54px; height: 94px; border: 2px solid var(--accent); border-radius: 13px; background: var(--accent); box-shadow: 0 7px 22px color-mix(in srgb, var(--accent) 15%, transparent); }
-.car::before { content: ""; position: absolute; inset: 22px 7px 18px; border-radius: 9px; background: #10212e; border-top: 11px solid #152b3b; border-bottom: 9px solid #152b3b; }
-.car::after { content: ""; position: absolute; top: 6px; left: 6px; right: 6px; height: 5px; border-left: 8px solid #e9f9ff; border-right: 8px solid #e9f9ff; }
+.slots { display: flex; width: 100%; border: 1px solid #56647b; }
+.slot { --accent: #9ba8bb; display: flex; flex: 1 0 120px; flex-direction: column; align-items: center; justify-content: center; min-width: 120px; min-height: 172px; padding: 22px 12px; color: var(--text); }
+.slot + .slot { border-left: 1px solid #56647b; }
+.slot.empty { --accent: var(--green); }
+.slot.occupied { --accent: var(--red); }
+.slot-id { color: #d4ddeb; font: 600 14px "Prompt", sans-serif; letter-spacing: 1px; }
+.slot-visual { display: flex; justify-content: center; align-items: center; height: 49px; }
+.status-dot { width: 13px; height: 13px; border-radius: 50%; background: var(--accent); }
+.slot-state { color: var(--text); font-size: 19px; font-weight: 600; }
+.slot.empty .slot-state { color: var(--green); }
+.slot.unknown .slot-state { color: #aab7ca; }
 .road { position: relative; display: flex; align-items: center; gap: 20px; height: 87px; padding: 0 4px; }
 .road-arrow { color: #53e6c0; font: 25px "Prompt", sans-serif; }
 .road-line { flex: 1; height: 1px; background: #42506a; }
@@ -75,9 +72,8 @@ h1 span { color: var(--blue); }
   .lot { padding: 0 17px; }
   .lot-heading { padding: 17px 0; font-size: 11px; }
   .map-scroll { padding-top: 21px; }
-  .slots { gap: 15px; }
-  .slot { flex-basis: 135px; min-width: 135px; min-height: 227px; padding-top: 20px; }
-  .slot-visual { height: 139px; }
+  .slot { flex-basis: 120px; min-height: 155px; padding: 18px 10px; }
+  .slot-state { font-size: 17px; }
   .road { height: 76px; }
   #dataStatus { font-size: 12px; }
 }

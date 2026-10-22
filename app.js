@@ -19,7 +19,7 @@
       slot.setAttribute('aria-label', id + ' ' + label);
       const name = document.createElement('span'); name.className = 'slot-id'; name.textContent = id;
       const visual = document.createElement('span'); visual.className = 'slot-visual'; visual.setAttribute('aria-hidden', 'true');
-      const symbol = document.createElement('span'); symbol.className = value === 1 ? 'car' : 'placeholder'; symbol.textContent = value === 1 ? '' : value === 0 ? '+' : '?';
+      const symbol = document.createElement('span'); symbol.className = 'status-dot';
       visual.append(symbol);
       const status = document.createElement('span'); status.className = 'slot-state'; status.textContent = label;
       slot.append(name, visual, status);
