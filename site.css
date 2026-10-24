@@ -24,9 +24,6 @@ img { display: block; width: 100%; height: auto; }
 .logo { display: inline-flex; align-items: center; font-size: 18px; font-weight: 700; text-decoration: none; letter-spacing: -.7px; }
 .logo > span { color: var(--pink); }
 .logo i { width: 5px; height: 5px; border-radius: 50%; background: var(--pink); margin-left: 5px; }
-nav { display: flex; flex-wrap: wrap; gap: 24px; }
-nav a { color: var(--muted); text-decoration: none; font-size: 12px; }
-nav a:hover { color: var(--pink); }
 .hero { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 64px; padding: 65px 0 88px; }
 .eyebrow { color: var(--muted); font-size: 10px; font-weight: 600; letter-spacing: 2px; margin-bottom: 17px; }
 h1 { font-size: clamp(36px, 4vw, 52px); font-weight: 700; line-height: 1.12; letter-spacing: -1.9px; }
@@ -93,8 +90,6 @@ h2 > span { color: #50677a; }
 @media (max-width: 600px) {
   .container { width: calc(100% - 36px); }
   .header-inner { flex-wrap: wrap; gap: 14px; padding: 20px 0; }
-  nav { gap: 18px; }
-  nav a { font-size: 11px; }
   .hero { grid-template-columns: 1fr; padding: 32px 0 50px; gap: 30px; }
   h1 { font-size: clamp(36px, 10vw, 48px); letter-spacing: -1.3px; }
   .hero-subtitle { font-size: 20px; }
