@@ -26,14 +26,12 @@ img { display: block; width: 100%; height: auto; }
 .logo i { width: 5px; height: 5px; border-radius: 50%; background: var(--pink); margin-left: 5px; }
 .hero { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 64px; padding: 65px 0 88px; }
 .eyebrow { color: var(--muted); font-size: 10px; font-weight: 600; letter-spacing: 2px; margin-bottom: 17px; }
-h1 { font-size: clamp(36px, 4vw, 52px); font-weight: 700; line-height: 1.12; letter-spacing: -1.9px; }
+h1 { font-size: clamp(28px, 2.6vw, 34px); font-weight: 700; line-height: 1.5; letter-spacing: -.6px; }
 h1 > span { display: block; color: var(--pink); font-size: .82em; margin-top: 7px; }
-.hero-subtitle { font-size: 20px; font-weight: 500; line-height: 1.7; margin-top: 24px; }
 .hero-description { color: var(--muted); font-size: 13px; margin-top: 16px; }
 .button { display: inline-flex; align-items: center; gap: 25px; padding: 11px 20px; border-radius: 5px; background: var(--pink); color: white; text-decoration: none; font-size: 12px; font-weight: 600; margin-top: 25px; }
 .button:hover { background: #ca224c; }
 .hero-image img { aspect-ratio: 1.08; object-fit: cover; object-position: 50% 50%; border-radius: 24px; }
-.hero-image figcaption { color: var(--muted); font-size: 10px; margin-top: 12px; }
 .section-light { background: var(--light); }
 .about { padding: 80px 0; }
 .about-grid { display: grid; grid-template-columns: 1fr 1.1fr; align-items: center; gap: 64px; }
@@ -81,7 +79,6 @@ h2 > span { color: #50677a; }
 .footer-inner > a:last-child { color: #a0b0be; font-size: 11px; text-decoration: none; }
 @media (max-width: 900px) {
   .hero, .about-grid { gap: 30px; }
-  .hero-subtitle { font-size: 18px; }
   .steps { gap: 20px; }
   .team-grid { grid-template-columns: repeat(3, 1fr); }
   .equipment-grid { grid-template-columns: repeat(2, 1fr); }
@@ -91,8 +88,7 @@ h2 > span { color: #50677a; }
   .container { width: calc(100% - 36px); }
   .header-inner { flex-wrap: wrap; gap: 14px; padding: 20px 0; }
   .hero { grid-template-columns: 1fr; padding: 32px 0 50px; gap: 30px; }
-  h1 { font-size: clamp(36px, 10vw, 48px); letter-spacing: -1.3px; }
-  .hero-subtitle { font-size: 20px; }
+  h1 { font-size: clamp(24px, 6vw, 28px); letter-spacing: -.5px; }
   .hero-image img { aspect-ratio: 1.35; border-radius: var(--radius); }
   .about { padding: 48px 0; }
   .about-grid { grid-template-columns: 1fr; gap: 32px; }
