@@ -1,5 +1,7 @@
 # ParkerWatcher
 
+<img src="Assets/img1.jpg" width="600">
+
 ## เว็บไซต์
 
 - เว็บไซต์โปรเจกต์: https://aimview.github.io/ParkerWatcher/
@@ -65,8 +67,8 @@ link
 
 | สมาชิก | รูปภาพ |
 |---|---|
-| 68070095 ปฐมภูมิ ศรีจันทร์ | <img src="Assets/member1.jpg" width="200" alt="ปฐมภูมิ ศรีจันทร์"> |
-| 68070120 พัชรพรรณ โกสินธุ์วัฒนะ | <img src="Assets/member2.jpg" width="200" alt="พัชรพรรณ โกสินธุ์วัฒนะ"> |
-| 68070163 วงศ์วรัณ รุจิรัตนาลัย | <img src="Assets/member3.jpg" width="200" alt="วงศ์วรัณ รุจิรัตนาลัย"> |
-| 68070165 วชิราวิทย์ โพธิจักร์ | <img src="Assets/member4.jpg" width="200" alt="วชิราวิทย์ โพธิจักร์"> |
-| 68070188 สิริน พรประทาน | <img src="Assets/member5.jpg" width="200" alt="สิริน พรประทาน"> |
+| 68070095 ปฐมภูมิ ศรีจันทร์ | <img src="Assets/member1.jpg" width="200"> |
+| 68070120 พัชรพรรณ โกสินธุ์วัฒนะ | <img src="Assets/member2.jpg" width="200"> |
+| 68070163 วงศ์วรัณ รุจิรัตนาลัย | <img src="Assets/member3.jpg" width="200"> |
+| 68070165 วชิราวิทย์ โพธิจักร์ | <img src="Assets/member4.jpg" width="200"> |
+| 68070188 สิริน พรประทาน | <img src="Assets/member5.jpg" width="200"> |
