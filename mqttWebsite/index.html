@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>ParkerWatcher — ตรวจช่องจอดว่าง</title>
+  <link rel="stylesheet" href="vendor/fonts/prompt/prompt.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <div class="title"><h1>Parker<span>Watcher</span></h1><p>ระบบตรวจสอบช่องจอดรถอัตโนมัติ</p></div>
+      <div class="connect"><button id="connectButton" type="button">Connect <span aria-hidden="true">↗</span></button><p id="connectionStatus" role="status" title="ยังไม่ได้เชื่อมต่อ MQTT">ยังไม่ได้เชื่อมต่อ MQTT</p></div>
+    </div>
+  </header>
+  <main>
+    <section class="availability" aria-label="จำนวนช่องว่าง">
+      <span class="availability-label"><i aria-hidden="true"></i> จำนวนที่ว่าง</span>
+      <p class="availability-number"><strong id="availableCount">—</strong><span class="availability-total" aria-hidden="true">/</span><span id="totalCount" class="availability-total">3</span><span class="availability-unit">ช่อง</span></p>
+      <p id="dataStatus" role="status">รอผลตรวจจากรถสำรวจ</p>
+    </section>
+
+    <section class="lot" aria-label="ภาพจำลองลานจอดรถ">
+      <div class="map-scroll" tabindex="0" role="region" aria-label="ผังจอดแถวเดียว เลื่อนแนวนอนเพื่อดูช่องเพิ่มเติม">
+        <div class="map-content">
+          <div id="parkingSlots" class="slots" aria-label="สถานะแต่ละช่องจอด"></div>
+          <div class="road" aria-label="เส้นทางรถสำรวจขนานกับช่องจอด"><span class="road-line" aria-hidden="true"></span><span class="road-text">เส้นทางรถสำรวจ</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="vendor/mqttws31.js"></script>
+  <script src="config.js"></script>
+  <script src="mqtt-array.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
