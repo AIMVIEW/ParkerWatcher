@@ -22,8 +22,7 @@
         <p class="eyebrow">PHYSICAL COMPUTING PROJECT</p>
         <h1 id="hero-title">หุ่นยนต์สำรวจช่องจอดรถ<br>พร้อมแสดงสถานะที่ว่างบนเว็บไซต์<span>PARKERWATCHER</span></h1>
         <p class="hero-description">สำรวจด้วยเซนเซอร์ ส่งข้อมูลผ่าน Wi-Fi<br>ให้คุณเห็นสถานะของแต่ละช่องจอดได้สะดวกขึ้น</p>
-        <a class="button" href="#about">รู้จักโปรเจกต์ <span aria-hidden="true">→</span></a>
-        <a class="dashboard-link" href="mqttWebsite/">เปิด Dashboard →</a>
+        <hr class="hero-rule">
       </div>
       <figure class="hero-image">
         <img src="Assets/img1.jpg" alt="ชิ้นงานหุ่นยนต์ ParkerWatcher">
@@ -32,15 +31,6 @@
 
     <section class="about section-light" id="about" aria-labelledby="about-title">
       <div class="container about-grid">
-        <figure class="system-diagram">
-          <figcaption>จากช่องจอด สู่ข้อมูลบนหน้าจอ</figcaption>
-          <ol>
-            <li><span>01</span><div><h3>IR + Ultrasonic</h3><p>นำทางและตรวจระยะ</p></div></li>
-            <li><span>02</span><div><h3>Arduino UNO R4 WiFi</h3><p>ประมวลผลสถานะช่องจอด</p></div></li>
-            <li><span>03</span><div><h3>Wi-Fi / MQTT</h3><p>ส่งข้อมูลสถานะทั้งลาน</p></div></li>
-            <li><span>04</span><div><h3>เว็บไซต์</h3><p>แสดงแต่ละช่องและจำนวนที่ว่าง</p></div></li>
-          </ol>
-        </figure>
         <div class="about-copy">
           <p class="eyebrow">ABSTRACT</p>
           <h2 id="about-title">บทคัดย่อ</h2>
@@ -81,9 +71,19 @@
       <div class="section-heading"><h2 id="usage-title">วิธีติดตั้งและใช้งาน</h2></div>
       <ol class="usage-steps"><li>ดาวน์โหลด repository และเปิด <code>Watcher.ino</code> ด้วย Arduino IDE</li><li>เลือกบอร์ด Arduino UNO R4 WiFi และติดตั้งไลบรารี MQTT by Joel Gaehwiler</li><li>กรอกชื่อและรหัสผ่าน Wi-Fi ในโค้ด แล้วอัปโหลดลงบอร์ด</li><li>เปิด Dashboard แล้วกด Connect โดยใช้ Broker <code>mqtt-dashboard.com</code> และ Topic <code>parkerwatcher/lot01/slots</code></li><li>วางรถบนสนาม แล้วกดสวิตช์ตรงกลางตัวรถเพื่อเริ่มทำงาน</li></ol>
       <div class="resource-grid">
-        <article><h3>Source Code</h3><ul><li><a href="Watcher.ino">โค้ด Arduino</a></li><li><a href="index.html">โค้ดเว็บไซต์โปรเจกต์</a></li><li><a href="mqttWebsite/">โค้ด Dashboard MQTT</a></li></ul></article>
         <article><h3>วิดีโอสาธิต</h3><p>link</p></article>
         <article><h3>โปสเตอร์ A1</h3><p>link</p></article>
+      </div>
+    </section>
+
+    <section class="source-code" id="source" aria-labelledby="source-title">
+      <div class="container">
+        <h2 id="source-title">Source Code</h2>
+        <div class="source-grid">
+          <a href="https://github.com/AIMVIEW/ParkerWatcher/blob/main/Watcher.ino">โค้ด Arduino</a>
+          <a href="https://github.com/AIMVIEW/ParkerWatcher/blob/main/index.html">โค้ดเว็บไซต์โปรเจกต์</a>
+          <a href="https://github.com/AIMVIEW/ParkerWatcher/tree/main/mqttWebsite">โค้ด Dashboard MQTT</a>
+        </div>
       </div>
     </section>
 
