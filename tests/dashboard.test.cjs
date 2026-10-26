@@ -22,11 +22,12 @@ function setup() {
   const connect=()=>{nodes.connectButton.click();const client=clients.at(-1);client.options.onSuccess();return client;};
   return {nodes,lot,clients,timers,connect,advance:ms=>{now+=ms;tick();}};
 }
-test('starts with four unknown bays and no fabricated availability',()=>{
-  const {nodes}=setup();assert.equal(nodes.parkingSlots.children.length,4);assert.equal(nodes.availableCount.textContent,'—');
+test('starts with three unknown bays and no fabricated availability',()=>{
+  const {nodes}=setup();assert.equal(nodes.parkingSlots.children.length,3);assert.equal(nodes.availableCount.textContent,'—');
 });
 test('MQTT snapshots resize a single row and update vacancies atomically',()=>{
   const {nodes,connect}=setup();const client=connect();assert.equal(client.topic,'parkerwatcher/lot01/slots');
+  client.receive('[1,0,null]');assert.equal(nodes.parkingSlots.children.length,3);assert.equal(nodes.availableCount.textContent,1);assert.equal(nodes.totalCount.textContent,3);assert.equal(nodes.parkingSlots.children[2].attrs['aria-label'],'A3 รอข้อมูล');
   client.receive('[1,0,1,0]');assert.equal(nodes.parkingSlots.children.length,4);assert.equal(nodes.availableCount.textContent,2);assert.equal(nodes.totalCount.textContent,4);
   client.receive('[1,0,1,0,1,1]');assert.equal(nodes.parkingSlots.children.length,6);assert.equal(nodes.availableCount.textContent,2);assert.equal(nodes.totalCount.textContent,6);
   assert.match(nodes.parkingSlots.children[0].attrs['aria-label'],/A1 มีรถ/);assert.match(nodes.parkingSlots.children[1].attrs['aria-label'],/A2 ว่าง/);

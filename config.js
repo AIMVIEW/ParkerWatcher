@@ -7,7 +7,7 @@ window.PARKER_CONFIG = Object.freeze({
   topic: 'parkerwatcher/lot01/slots', // Topic เดียวสำหรับสถานะทั้งลาน
   username: '',
   // เว็บ static เปิดเผยไฟล์ได้ อย่า commit password ของบัญชีส่วนตัวใน repository
-  initialSlots: 4,        // จำนวนช่องที่แสดงระหว่างรอข้อความแรก
+  initialSlots: 3,        // จำนวนช่องที่แสดงระหว่างรอข้อความแรก
   slotPrefix: 'A',        // array[0] -> A1, array[1] -> A2, ...
   maxSlots: 200,          // ป้องกันข้อความผิดพลาดสร้างกล่องจำนวนมาก
   staleAfterSeconds: 180, // ปรับให้มากกว่าเวลาวิ่งหนึ่งรอบรวมเวลาพัก
