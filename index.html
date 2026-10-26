@@ -23,9 +23,10 @@
         <h1 id="hero-title">หุ่นยนต์สำรวจช่องจอดรถ<br>พร้อมแสดงสถานะที่ว่างบนเว็บไซต์<span>PARKERWATCHER</span></h1>
         <p class="hero-description">สำรวจด้วยเซนเซอร์ ส่งข้อมูลผ่าน Wi-Fi<br>ให้คุณเห็นสถานะของแต่ละช่องจอดได้สะดวกขึ้น</p>
         <a class="button" href="#about">รู้จักโปรเจกต์ <span aria-hidden="true">→</span></a>
+        <a class="dashboard-link" href="mqttWebsite/">เปิด Dashboard →</a>
       </div>
       <figure class="hero-image">
-        <img src="Assets/site/robot-concept.jpg" alt="ภาพประกอบแนวคิดรถหุ่นยนต์เดินตามเส้นจากไฟล์ออกแบบ ไม่ใช่ภาพรถจริงของทีม" width="512" height="279">
+        <img src="Assets/img1.jpg" alt="ชิ้นงานหุ่นยนต์ ParkerWatcher">
       </figure>
     </section>
 
@@ -41,11 +42,9 @@
           </ol>
         </figure>
         <div class="about-copy">
-          <p class="eyebrow">ABOUT THE PROJECT</p>
-          <h2 id="about-title">ผู้ช่วยสำรวจช่องจอดรถ<br><span>เพื่อให้การหาที่จอดง่ายขึ้น</span></h2>
-          <p>ParkerWatcher คือระบบตรวจสอบช่องจอดรถอัตโนมัติ โดยใช้รถขนาดเล็กเคลื่อนที่ตามเส้นด้วยเซนเซอร์ IR เพื่อตรวจสอบช่องจอดแต่ละช่อง และใช้ Ultrasonic Sensor วัดระยะเพื่อตรวจว่าช่องจอดว่างหรือมีรถจอดอยู่</p>
-          <p>ข้อมูลสถานะถูกส่งผ่าน Wi-Fi และ MQTT ไปแสดงผลบนเว็บไซต์ ผู้ใช้สามารถดูตำแหน่งและสถานะของแต่ละช่อง รวมถึงจำนวนช่องจอดที่ว่างได้</p>
-          <p class="project-goal">เป้าหมายของระบบคือให้รถวนกลับมาตรวจสอบซ้ำตามเวลาที่กำหนด เพื่ออัปเดตสถานะให้เป็นปัจจุบัน</p>
+          <p class="eyebrow">ABSTRACT</p>
+          <h2 id="about-title">บทคัดย่อ</h2>
+          <p>ParkerWatcher คือหุ่นยนต์สำรวจช่องจอดรถ โดยใช้ Arduino UNO R4 WiFi เป็นตัวควบคุม รถเคลื่อนที่ตามเส้นด้วยเซนเซอร์ IR และใช้ Ultrasonic HC-SR04 วัดระยะเพื่อประเมินว่าช่องจอดว่างหรือมีรถจอดอยู่ จากนั้นส่งข้อมูลผ่าน Wi-Fi และ MQTT ไปแสดงบนเว็บไซต์ ซึ่งแสดงสถานะของแต่ละช่องและจำนวนช่องจอดที่ว่างได้ โดยออกแบบให้รถหมุนกลับและเริ่มตรวจรอบใหม่ เพื่อช่วยลดความไม่สะดวกในการขับรถวนหาที่จอด</p>
         </div>
       </div>
     </section>
@@ -55,19 +54,21 @@
         <p class="eyebrow">HOW IT WORKS</p>
         <h2 id="workflow-title">หลักการทำงาน</h2>
         <ol class="steps">
-          <li><span class="step-number">01</span><h3>เดินตามเส้น</h3><p>อ่านเซนเซอร์ IR เพื่อนำทางและระบุตำแหน่งช่องจอด</p></li>
-          <li><span class="step-number">02</span><h3>ตรวจระยะ</h3><p>Ultrasonic วัดระยะและแปลงเป็นสถานะ มีรถ ว่าง หรือยังไม่ทราบ</p></li>
+          <li><span class="step-number">01</span><h3>เดินตามเส้น</h3><p>อ่าน IR และนับจุดเมื่อเซนเซอร์ทั้งสองพบสีดำ</p></li>
+          <li><span class="step-number">02</span><h3>ตรวจระยะ</h3><p>หยุดที่จุด 1–3 เพื่อตรวจช่องจอด A1–A3 ด้วย Ultrasonic</p></li>
           <li><span class="step-number">03</span><h3>ส่งสถานะ</h3><p>เก็บ array ตาม A1, A2, … แล้วส่งครบทุกช่องผ่าน MQTT</p></li>
           <li><span class="step-number">04</span><h3>แสดงบนเว็บไซต์</h3><p>อัปเดตแต่ละช่องและนับจำนวนที่ว่างเฉพาะค่า 0</p></li>
         </ol>
-        <p class="payload-example"><code>[1, 0, null, 0]</code><span>1 = มีรถ · 0 = ว่าง · null = ยังไม่ทราบ</span></p>
+        <p class="payload-example"><code>[1, 0, null]</code><span>1 = มีรถ · 0 = ว่าง · null = ยังไม่ทราบ</span></p>
+        <p class="round-description">ครบจุดที่ 3 หมุนกลับ ผ่านจุด 4–6 โดยไม่ตรวจหรือส่งผลใหม่ จากนั้นหมุนกลับและเริ่มนับรอบใหม่</p>
       </div>
     </section>
 
     <section class="equipment container" id="equipment" aria-labelledby="equipment-title">
-      <div class="section-heading"><p class="eyebrow">THE HARDWARE</p><h2 id="equipment-title">อุปกรณ์สำคัญ</h2><p>ส่วนประกอบที่ทำให้การสำรวจและส่งข้อมูลทำงานร่วมกัน</p></div>
+      <div class="section-heading"><p class="eyebrow">-----------</p><h2 id="equipment-title">อุปกรณ์สำคัญ</h2><p>-----------</p></div>
       <div class="equipment-grid">
         <article class="equipment-card"><span class="card-number">01 / CONTROLLER</span><h3>Arduino UNO R4 WiFi</h3><p>บอร์ดควบคุมและเชื่อมต่อ Wi-Fi</p></article>
+        <article class="equipment-card"><span class="card-number">SENSOR SHIELD</span><h3>Arduino Sensor Shield</h3><p>จำนวน 1 ตัว</p></article>
         <article class="equipment-card"><span class="card-number">02 / LINE SENSOR</span><h3>IR TCRT5000</h3><p>เซนเซอร์เดินตามเส้น จำนวน 2 ตัว</p></article>
         <article class="equipment-card"><span class="card-number">03 / DISTANCE SENSOR</span><h3>Ultrasonic HC-SR04</h3><p>วัดระยะเพื่อตรวจสอบช่องจอด</p></article>
         <article class="equipment-card"><span class="card-number">04 / MOTOR DRIVER</span><h3>L298N</h3><p>ขับมอเตอร์และควบคุมการเคลื่อนที่</p></article>
@@ -76,19 +77,29 @@
       </div>
     </section>
 
+    <section class="usage container" id="usage" aria-labelledby="usage-title">
+      <div class="section-heading"><h2 id="usage-title">วิธีติดตั้งและใช้งาน</h2></div>
+      <ol class="usage-steps"><li>ดาวน์โหลด repository และเปิด <code>Watcher.ino</code> ด้วย Arduino IDE</li><li>เลือกบอร์ด Arduino UNO R4 WiFi และติดตั้งไลบรารี MQTT by Joel Gaehwiler</li><li>กรอกชื่อและรหัสผ่าน Wi-Fi ในโค้ด แล้วอัปโหลดลงบอร์ด</li><li>เปิด Dashboard แล้วกด Connect โดยใช้ Broker <code>mqtt-dashboard.com</code> และ Topic <code>parkerwatcher/lot01/slots</code></li><li>วางรถบนสนาม แล้วกดสวิตช์ตรงกลางตัวรถเพื่อเริ่มทำงาน</li></ol>
+      <div class="resource-grid">
+        <article><h3>Source Code</h3><ul><li><a href="Watcher.ino">โค้ด Arduino</a></li><li><a href="index.html">โค้ดเว็บไซต์โปรเจกต์</a></li><li><a href="mqttWebsite/">โค้ด Dashboard MQTT</a></li></ul></article>
+        <article><h3>วิดีโอสาธิต</h3><p>link</p></article>
+        <article><h3>โปสเตอร์ A1</h3><p>link</p></article>
+      </div>
+    </section>
+
     <section class="team section-light" id="team" aria-labelledby="team-title">
       <div class="container">
         <div class="section-heading"><p class="eyebrow">OUR TEAM</p><h2 id="team-title">ผู้พัฒนา ParkerWatcher</h2></div>
         <div class="team-grid">
-          <article class="member-card"><div class="member-placeholder" role="img" aria-label="ยังไม่มีรูป ปฐมภูมิ ศรีจันทร์"><span aria-hidden="true">ปศ</span></div><div class="member-info"><h3>ปฐมภูมิ ศรีจันทร์</h3><p>68070095</p></div></article>
-          <article class="member-card"><div class="member-placeholder" role="img" aria-label="ยังไม่มีรูป พัชรพรรณ โกสินธุ์วัฒนะ"><span aria-hidden="true">พก</span></div><div class="member-info"><h3>พัชรพรรณ โกสินธุ์วัฒนะ</h3><p>68070120</p></div></article>
-          <article class="member-card"><div class="member-placeholder" role="img" aria-label="ยังไม่มีรูป วงศ์วรัณ รุจิรัตนาลัย"><span aria-hidden="true">วร</span></div><div class="member-info"><h3>วงศ์วรัณ รุจิรัตนาลัย</h3><p>68070163</p></div></article>
+          <article class="member-card"><img class="member-photo" src="Assets/member1.jpg" alt="ปฐมภูมิ ศรีจันทร์" loading="lazy"><div class="member-info"><h3>ปฐมภูมิ ศรีจันทร์</h3><p>68070095</p></div></article>
+          <article class="member-card"><img class="member-photo" src="Assets/member2.jpg" alt="พัชรพรรณ โกสินธุ์วัฒนะ" loading="lazy"><div class="member-info"><h3>พัชรพรรณ โกสินธุ์วัฒนะ</h3><p>68070120</p></div></article>
+          <article class="member-card"><img class="member-photo" src="Assets/member3.jpg" alt="วงศ์วรัณ รุจิรัตนาลัย" loading="lazy"><div class="member-info"><h3>วงศ์วรัณ รุจิรัตนาลัย</h3><p>68070163</p></div></article>
           <article class="member-card"><div class="member-placeholder" role="img" aria-label="ยังไม่มีรูป วชิราวิทย์ โพธิจักร์"><span aria-hidden="true">วพ</span></div><div class="member-info"><h3>วชิราวิทย์ โพธิจักร์</h3><p>68070165</p></div></article>
           <article class="member-card"><img class="member-photo" src="Assets/member5.jpg" alt="สิริน พรประทาน" width="1308" height="1252" loading="lazy"><div class="member-info"><h3>สิริน พรประทาน</h3><p>68070188</p></div></article>
         </div>
       </div>
     </section>
   </main>
-  <footer class="footer"><div class="container footer-inner"><a class="logo" href="#home">Parker<span>Watcher</span><i aria-hidden="true"></i></a><p>หุ่นยนต์สำรวจช่องจอดรถ · Physical Computing Project</p><a href="https://github.com/AIMVIEW/ParkerWatcher">ดูโปรเจกต์บน GitHub →</a></div></footer>
+  <footer class="footer"><div class="container footer-inner"><a class="logo" href="#home">Parker<span>Watcher</span><i aria-hidden="true"></i></a><a href="https://github.com/AIMVIEW/ParkerWatcher">ดูโปรเจกต์บน GitHub →</a></div></footer>
 </body>
 </html>
