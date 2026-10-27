@@ -47,11 +47,11 @@ ParkerWatcher คือหุ่นยนต์สำรวจช่องจอ
 
 ## วิดีโอสาธิต
 
-link
+https://youtu.be/mzwZb5Pl8vs
 
 ## โปสเตอร์
 
-link
+<a href="Assets/poster.png"><img src="Assets/poster.png" width="600"></a>
 
 ## สมาชิกกลุ่ม
 

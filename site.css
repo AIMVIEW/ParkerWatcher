@@ -115,3 +115,8 @@ h2 > span { color: #50677a; }
 .source-grid a { padding: 18px 8px; font-size: 20px; font-weight: 500; text-decoration-color: #9ac1dd; text-underline-offset: 8px; }
 .source-grid a:hover { color: #b9ddf5; }
 @media (max-width: 600px) { .source-grid { grid-template-columns: 1fr; gap: 8px; } .source-code { padding: 45px 0; } }
+
+.demo-video { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: 8px; background: #0c1b28; }
+.poster-link { display: block; border-radius: 8px; overflow: hidden; }
+.poster-link img { width: 100%; height: auto; }
+.resource-link { margin-top: 16px; font-size: 16px; }
